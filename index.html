@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wake Up Deepu | Happy Diwali</title>
+<meta name="description" content="Wake up Deepu the sleepy diya and light up Diwali night.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%94%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0d0618;--gold:#ffb627;--saffron:#ff7a1a;--rose:#ff4f81;--teal:#2fe0c8;--ivory:#fff3d6;--ink:#2a0f3d;
+--f:"Baloo 2","Trebuchet MS",sans-serif;--b:"Nunito","Helvetica Neue",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0;overflow:hidden;color:var(--ivory);background:var(--night);touch-action:manipulation;-webkit-user-select:none;user-select:none}
+body{font-family:var(--b);background:linear-gradient(180deg,#07030f 0%,#1a0b33 45%,#3a1448 75%,#7a2c2a 100%)}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+canvas{position:fixed;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.star{position:fixed;border-radius:50%;background:#fff6dc;opacity:.25;animation:tw var(--d) ease-in-out infinite}
+@keyframes tw{50%{opacity:1}}
+.moon{position:fixed;top:calc(90px + env(safe-area-inset-top,0px));right:7vw;width:54px;height:54px;border-radius:50%;box-shadow:inset -15px -5px 0 0 #ffe9a8,0 0 40px rgba(255,233,168,.3);transform:rotate(-20deg)}
+.vil{position:fixed;left:0;right:0;bottom:0;height:min(26vh,230px);z-index:1;pointer-events:none}
+.vil svg{width:100%;height:100%;display:block}
+.w{animation:fk var(--d) ease-in-out infinite alternate}
+@keyframes fk{from{opacity:.35}to{opacity:1}}
+.street{position:fixed;left:0;right:0;bottom:0;height:5vh;background:#0b0415;z-index:3}
+#say{position:fixed;z-index:7;left:50%;top:calc(18px + env(safe-area-inset-top,0px));transform:translateX(-50%);width:min(90vw,470px);min-height:3.6em;background:var(--ivory);color:var(--ink);border-radius:22px;padding:.7rem 1.1rem .8rem;font:600 clamp(1rem,2.6vw,1.2rem)/1.35 var(--f);box-shadow:0 6px 0 rgba(0,0,0,.28),0 0 40px rgba(255,182,39,.25)}
+#say b{display:block;font-weight:800;font-size:.8em;color:var(--rose);margin-bottom:1px}
+#say.bump{animation:bump .35s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bump{from{transform:translateX(-50%) scale(.93)}}
+#tip{position:fixed;z-index:5;left:0;right:0;top:max(24vh,180px);text-align:center;font:800 1.1rem/1 var(--f);color:var(--teal);animation:blink 1.6s ease-in-out infinite;pointer-events:none}
+@keyframes blink{50%{opacity:.45}}
+#deepu{position:fixed;z-index:6;bottom:3vh;left:50%;transform:translateX(-50%);width:min(52vw,30vh,230px);background:none;border:0;padding:0}
+#deepu::before{content:"";position:absolute;left:50%;top:30%;width:320%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,-50%) scale(0);background:radial-gradient(circle,rgba(255,176,50,.5),rgba(255,100,40,.14) 40%,transparent 66%);transition:transform 1.8s cubic-bezier(.2,.7,.2,1);z-index:-1;pointer-events:none}
+#deepu.on::before{transform:translate(-50%,-50%) scale(1)}
+#deepu svg{width:100%;display:block;filter:drop-shadow(0 12px 18px rgba(0,0,0,.55))}
+#deepu .eo,#deepu .am{display:none}
+#deepu.awake .eo,#deepu.awake .am{display:inline}
+#deepu.awake .ec,#deepu.awake .sm,#deepu.awake .zz{display:none}
+.sm{transform-box:fill-box;transform-origin:center;animation:snore 2.2s ease-in-out infinite}
+@keyframes snore{50%{transform:scale(1.5,1.8)}}
+.zz text{font:800 26px var(--f);fill:#cfc6ff;opacity:0;animation:zf 2.8s ease-out infinite}
+.zz text:nth-child(2){animation-delay:.9s}.zz text:nth-child(3){animation-delay:1.8s}
+@keyframes zf{0%{opacity:0;transform:translate(0,12px)}30%{opacity:1}100%{opacity:0;transform:translate(14px,-22px)}}
+.flame{transform-origin:100px 72px;transform:scale(0);transition:transform 1.2s cubic-bezier(.3,1.6,.5,1)}
+#deepu.on .flame{transform:scale(1);animation:fl 1.7s ease-in-out 1.2s infinite}
+@keyframes fl{0%,100%{transform:scale(1)}25%{transform:scale(.96,1.07) skewX(2.5deg)}50%{transform:scale(1.03,.95) skewX(-2deg)}75%{transform:scale(.98,1.04) skewX(1.5deg)}}
+#deepu.hit svg{animation:hit .4s}
+@keyframes hit{20%{transform:rotate(-9deg) scale(1.06)}50%{transform:rotate(8deg)}80%{transform:rotate(-4deg)}}
+.pop{position:fixed;z-index:9;font:800 1.5rem/1 var(--f);color:var(--gold);text-shadow:0 3px 0 #5a1f2e;pointer-events:none;animation:up .9s ease-out forwards;transform:translateX(-50%)}
+@keyframes up{to{transform:translate(-50%,-70px) scale(1.3);opacity:0}}
+#fin{position:fixed;z-index:6;left:0;right:0;top:max(24vh,185px);display:flex;flex-direction:column;align-items:center;gap:.9rem;text-align:center;padding:0 20px;opacity:0;pointer-events:none;transition:opacity 1.6s ease .4s}
+.done #fin{opacity:1}
+#fin h1{font:800 clamp(2.8rem,11vw,6rem)/1 var(--f);margin:0;background:linear-gradient(180deg,#fff0b8,var(--gold) 55%,var(--saffron));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 24px rgba(255,150,30,.45))}
+#fin p{margin:0;max-width:24em;font-size:clamp(.95rem,2.4vw,1.1rem);line-height:1.6;color:rgba(255,243,214,.85)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.done .btns button{pointer-events:auto}
+.go-btn{font:800 1rem/1 var(--f);color:var(--ink);background:linear-gradient(180deg,#ffd878,var(--gold));border:0;border-radius:999px;padding:.9rem 1.8rem;box-shadow:0 6px 0 #a85a08}
+.go-btn:active{transform:translateY(4px);box-shadow:0 2px 0 #a85a08}
+.go-btn.alt{background:rgba(255,243,214,.12);color:var(--ivory);box-shadow:0 6px 0 rgba(0,0,0,.4);border:1px solid rgba(255,200,100,.5)}
+button:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){#tip,.sm,.zz text,.flame{animation:none!important}.zz text{opacity:1}}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="moon"></div>
+<div class="vil"><svg id="vil" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true"></svg></div>
+<div class="street"></div>
+
+<div id="say"><b>Narrator</b>It is Diwali night, and Deepu the diya is fast asleep. Poke him!</div>
+<div id="tip">Tap Deepu to wake him up</div>
+
+<div id="fin">
+  <h1>Happy Diwali!</h1>
+  <p>May your home glow with light and your plate stay full of sweets.</p>
+  <div class="btns"><button class="go-btn" id="more" tabindex="-1">More fireworks</button><button class="go-btn alt" id="again" tabindex="-1">Wake him again</button></div>
+</div>
+
+<button id="deepu" aria-label="Deepu the sleeping diya. Tap to wake him up.">
+<svg viewBox="0 0 200 150">
+<defs><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd878"/><stop offset=".55" stop-color="#e0891a"/><stop offset="1" stop-color="#7a3a0c"/></linearGradient>
+<radialGradient id="fg" cx=".5" cy=".75" r=".7"><stop offset="0" stop-color="#fffbe0"/><stop offset=".35" stop-color="#ffd23f"/><stop offset=".75" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ff4f1a" stop-opacity=".85"/></radialGradient></defs>
+<g class="zz"><text x="132" y="44">Z</text><text x="146" y="30">Z</text><text x="160" y="16">Z</text></g>
+<g class="flame"><path d="M100 8C118 36 126 56 100 74C74 56 82 36 100 8Z" fill="url(#fg)"/><path d="M100 38C108 52 110 62 100 72C90 62 92 52 100 38Z" fill="#fffdf0" opacity=".9"/></g>
+<rect x="97.5" y="68" width="5" height="10" rx="2.5" fill="#2b1206"/>
+<path d="M14 78C40 76 70 82 100 82S160 76 186 78C182 112 150 140 100 140S18 112 14 78Z" fill="url(#gd)"/>
+<path d="M14 78C40 76 70 82 100 82S160 76 186 78C170 90 135 92 100 92S30 90 14 78Z" fill="#ffd878" opacity=".55"/>
+<circle cx="64" cy="112" r="7" fill="#ff4f81" opacity=".45"/><circle cx="136" cy="112" r="7" fill="#ff4f81" opacity=".45"/>
+<g fill="none" stroke="#2b1206" stroke-width="3.5" stroke-linecap="round"><path class="ec" d="M68 104q9 7 18 0M114 104q9 7 18 0"/><path class="am" d="M88 117q12 13 24 0"/></g>
+<g class="eo"><circle cx="77" cy="103" r="8" fill="#2b1206"/><circle cx="123" cy="103" r="8" fill="#2b1206"/><circle cx="80" cy="100" r="3" fill="#fff"/><circle cx="126" cy="100" r="3" fill="#fff"/></g>
+<ellipse class="sm" cx="100" cy="120" rx="4" ry="3.5" fill="#2b1206"/>
+</svg></button>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},R=Math.random,body=document.body,i;
+var deepu=$("deepu"),sayEl=$("say"),tipEl=$("tip"),n=0,done=false;
+
+/* stars + village */
+for(i=0;i<70;i++){var s=document.createElement("div");s.className="star";var z=R()*2+.8;s.style.cssText="left:"+R()*100+"%;top:"+R()*55+"%;width:"+z+"px;height:"+z+"px;--d:"+(2+R()*4)+"s;animation-delay:-"+R()*5+"s";body.appendChild(s)}
+var v='<ellipse cx="600" cy="190" rx="620" ry="110" fill="rgba(255,120,40,.35)"/>',x;
+for(x=-20;x<1200;x+=125){var h=62+R()*52,w=104,t=200-h;
+  v+='<rect x="'+x+'" y="'+t+'" width="'+w+'" height="'+h+'" fill="#150a26"/><path d="M'+(x-8)+' '+t+'L'+(x+w/2)+' '+(t-32)+'L'+(x+w+8)+' '+t+'Z" fill="#150a26"/>';
+  [x+16,x+66].forEach(function(wx){v+='<rect class="w" x="'+wx+'" y="'+(t+16)+'" width="20" height="26" rx="3" fill="#ffb627" style="--d:'+(.8+R()*2.5)+'s;animation-delay:-'+R()*3+'s"/>'});
+  for(var k=0;k<=w;k+=13)v+='<circle class="w" cx="'+(x+k)+'" cy="'+(t+(k%26?2:5))+'" r="2.6" fill="'+(k%26?"#ff4f81":"#ffd878")+'" style="--d:'+(.5+R()*1.5)+'s"/>'}
+$("vil").innerHTML=v;
+
+/* helpers */
+function talk(who,txt){sayEl.innerHTML="<b>"+who+"</b>"+txt;sayEl.classList.remove("bump");void sayEl.offsetWidth;sayEl.classList.add("bump")}
+var WORDS=["Boom!","Yikes!","Oof!","Ta-da!","Hehe!","Whoa!","Zing!"];
+function pop(e){var p=document.createElement("div");p.className="pop";p.textContent=WORDS[(R()*WORDS.length)|0];var r=deepu.getBoundingClientRect();p.style.left=(e&&e.clientX?e.clientX:r.left+r.width/2)+"px";p.style.top=(e&&e.clientY?e.clientY:r.top)+"px";body.appendChild(p);setTimeout(function(){p.remove()},900)}
+function hit(){deepu.classList.remove("hit");void deepu.offsetWidth;deepu.classList.add("hit")}
+
+/* wake up Deepu */
+var L=["Zzz… five more minutes…","I said FIVE minutes, Ma!","Is it… is it Diwali already?","Wait. WAIT. IT’S DIWALI?!","I’M UP! I’M UP! Somebody light me!"];
+var QUIPS=["Hehe, that tickles!","I’m a diya, not a trampoline.","Careful, I’m hot. Literally.","Boop!"];
+deepu.onclick=function(e){
+  hit();pop(e);
+  if(done){talk("Deepu",QUIPS[(R()*QUIPS.length)|0]);return}
+  if(n>=5)return;
+  talk("Deepu",L[n]);n++;
+  if(n==5){
+    deepu.classList.add("awake","on");deepu.setAttribute("aria-label","Deepu the diya, awake and glowing");
+    tipEl.style.display="none";
+    launch(W*.5,H*.2);
+    setTimeout(celebrate,1400);
+  }
+};
+function celebrate(){
+  done=true;body.classList.add("done");
+  talk("Deepu","Happy Diwali, everyone! Now go and eat something sweet.");
+  $("more").tabIndex=0;$("again").tabIndex=0;
+  finale();
+  (function a(){if(!document.hidden)launch(W*(.1+R()*.8),H*(.1+R()*.4));setTimeout(a,1800+R()*1500)})();
+}
+
+/* fireworks */
+var cv=$("c"),cx=cv.getContext("2d"),W,H,rockets=[],sparks=[];
+function size(){var dp=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*dp;cv.height=H*dp;cx.setTransform(dp,0,0,dp,0,0)}
+size();addEventListener("resize",size);
+function launch(tx,ty){var sx=tx+(R()-.5)*180;rockets.push({x:sx,y:H,ty:ty,vx:(tx-sx)/55,vy:-(H-ty)/55})}
+function burst(x,y){var h=[45,28,342,190,300,120][(R()*6)|0],t=R(),nn=t<.3?60:100,k,a,sp;
+  for(k=0;k<nn;k++){a=6.283*k/nn+R()*.1;sp=t<.3?4:R()*4.6+1;
+    sparks.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:t>.7?1.6:1,d:t>.7?.008:.011,h:t>.7?44:h+R()*30-15,l:t>.7?68:62,g:t>.7?.03:.045,f:t>.7?.985:.972})}}
+function tick(){
+  cx.globalCompositeOperation="destination-out";cx.fillStyle="rgba(0,0,0,.2)";cx.fillRect(0,0,W,H);cx.globalCompositeOperation="lighter";
+  var p,j;
+  for(j=rockets.length-1;j>=0;j--){p=rockets[j];p.x+=p.vx;p.y+=p.vy;sparks.push({x:p.x,y:p.y,vx:0,vy:.3,life:.5,d:.06,h:40,l:80,g:0,f:1});cx.fillStyle="#ffe9a8";cx.beginPath();cx.arc(p.x,p.y,2.2,0,6.283);cx.fill();if(p.y<=p.ty){burst(p.x,p.y);rockets.splice(j,1)}}
+  for(j=sparks.length-1;j>=0;j--){p=sparks[j];p.vx*=p.f;p.vy=p.vy*p.f+p.g;p.x+=p.vx;p.y+=p.vy;p.life-=p.d;if(p.life<=0){sparks.splice(j,1);continue}
+    cx.fillStyle="hsla("+p.h+",100%,"+p.l+"%,"+Math.min(p.life,1)+")";cx.beginPath();cx.arc(p.x,p.y,2,0,6.283);cx.fill()}
+  requestAnimationFrame(tick)}
+tick();
+function finale(){for(var k=0;k<20;k++)(function(k){setTimeout(function(){launch(W*(.08+R()*.84),H*(.1+R()*.4))},k*230)})(k)}
+
+/* wiring */
+$("more").onclick=finale;
+$("again").onclick=function(){location.reload()};
+addEventListener("pointerdown",function(e){if(done&&!e.target.closest("button"))launch(e.clientX,Math.min(e.clientY,H*.7))});
+})();
+</script>
+</body>
+</html>
